@@ -43,9 +43,18 @@ createApp({
 
     nextPrev(boole){
 
-      boole 
-      ? this.counter++ 
-      : this.counter--
+        if (this.booleDbl) {
+            boole 
+            ? this.counter++ 
+            : this.counter--
+            
+        }else{
+            boole 
+            ? this.counter -- 
+            : this.counter ++
+        }
+
+      
 
       if (this.counter === this.images.length) {
 
@@ -60,13 +69,13 @@ createApp({
 
     autoPlay(){
         setInterval(() => {
-            if (this.booleDbl) {
+            if (this.boole) {
+                
                 this.nextPrev(true);
-            }else{
-                this.nextPrev(false);
             }
-        }, 3000);
+        }, 300);
     }
+    
 
     },
     mounted() {

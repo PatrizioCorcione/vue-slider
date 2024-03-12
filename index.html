@@ -33,14 +33,19 @@
                     
                 </div>
                 
-                <div class="col-12 p-5">
+                <div
+                
+                 class="col-12 p-5"
+                 >
                     <div 
-                    @mouseenter="boole=false"
-                    @mouseleave="boole=true"
+                    
                     class="my-carousel-container d-flex flex-column px-5" id="my-carousel"
                     >
                         <div 
-                        @dblclick="booleDbl=false"  class="my-carousel-images"
+                        @dblclick="booleDbl = !booleDbl"
+                        @mouseenter="boole=false"
+                        @mouseleave="boole=true" 
+                        class="my-carousel-images"
                         >
                             <div class="my-carousel-item">
                                 <img class="img-fluid" :src = "images[counter].url">
