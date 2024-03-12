@@ -35,6 +35,7 @@ createApp({
     ],
     counter: 0,
     boole: true,
+    booleDbl: true
     }
   },
 
@@ -59,8 +60,10 @@ createApp({
 
     autoPlay(){
         setInterval(() => {
-            if (this.boole) {
+            if (this.booleDbl) {
                 this.nextPrev(true);
+            }else{
+                this.nextPrev(false);
             }
         }, 3000);
     }

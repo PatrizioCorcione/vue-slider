@@ -39,7 +39,9 @@
                     @mouseleave="boole=true"
                     class="my-carousel-container d-flex flex-column px-5" id="my-carousel"
                     >
-                        <div class="my-carousel-images">
+                        <div 
+                        @dblclick="booleDbl=false"  class="my-carousel-images"
+                        >
                             <div class="my-carousel-item">
                                 <img class="img-fluid" :src = "images[counter].url">
                                 <div class="item-description px-3">
