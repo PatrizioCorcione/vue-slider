@@ -34,7 +34,11 @@
                 </div>
                 
                 <div class="col-12 p-5">
-                    <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
+                    <div 
+                    @mouseenter="boole=false"
+                    @mouseleave="boole=true"
+                    class="my-carousel-container d-flex flex-column px-5" id="my-carousel"
+                    >
                         <div class="my-carousel-images">
                             <div class="my-carousel-item">
                                 <img class="img-fluid" :src = "images[counter].url">
@@ -45,7 +49,7 @@
                             </div>
 
                         </div>
-                        <div class="my-previous position-absolute">
+                        <div @click="nextPrev(false)" class="my-previous position-absolute">
                             <span class="my-prev-hook"></span>
                         </div>
                         <div class="my-thumbnails position-relative">
@@ -61,7 +65,7 @@
 
                             <!-- next -->
                           </div>
-                          <div class="my-next position-absolute">
+                          <div @click="nextPrev(true)" class="my-next position-absolute">
                               <span class="my-next-hook"></span>
                           </div>
                     </div>
@@ -71,11 +75,7 @@
                     
                 </div>
             </div>
-            <div class="text-center ">
-              <span id="btnsx" class="btn btn-primary "> Auto scorrimento sinistra </span>
-              <span id="btnstop" class="btn btn-dark  "> Auto scorrimento stop </span>
-              <span id="btndx" class="btn btn-primary "> Auto scorrimento destra </span>
-            </div>
+            
         </div>
     </main>
 

@@ -34,17 +34,41 @@ createApp({
         },
     ],
     counter: 0,
+    boole: true,
     }
   },
 
   methods: {
 
-    
-    
-  },
-  mounted() {
-    console.log(this.images);
-  },
+    nextPrev(boole){
+
+      boole 
+      ? this.counter++ 
+      : this.counter--
+
+      if (this.counter === this.images.length) {
+
+          this.counter=0;
+          
+      }else if (this.counter < 0) {
+
+          this.counter = this.images.length- 1;
+
+      }
+    },
+
+    autoPlay(){
+        setInterval(() => {
+            if (this.boole) {
+                this.nextPrev(true);
+            }
+        }, 3000);
+    }
+
+    },
+    mounted() {
+        this.autoPlay();
+    },
 }).mount('#app');
 
 
