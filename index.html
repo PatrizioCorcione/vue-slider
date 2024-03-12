@@ -18,21 +18,31 @@
     <!-- Custom style -->
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <title>JS Array Carousel with Objects</title>
 
 </head>
 <body>
 
-    <main>
+    <main id="app">
         <div class="container-fluid p-5">
             <div class="row text-center">
                 <div class="col-12 p-3" id="my-before-carousel">
 
+                    
                 </div>
-
+                
                 <div class="col-12 p-5">
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
+                            <div class="my-carousel-item">
+                                <img class="img-fluid" :src = "images[counter].url">
+                                <div class="item-description px-3">
+                                    <h2>{{images[counter].title}}</h2>
+                                    <p>{{images[counter].description}}</p>
+                                </div>
+                            </div>
 
                         </div>
                         <div class="my-previous position-absolute">
@@ -41,7 +51,9 @@
                         <div class="my-thumbnails position-relative">
                             <!-- prev -->
 
-                            
+                          <div v-for="(img, index) in images"  class="my-thumbnail">
+                            <img class="img-fluid" :src = "img.url">
+                          </div>
 
                             <!-- next -->
                           </div>
@@ -52,6 +64,7 @@
                 </div>
 
                 <div class="col-12 p-3" id="my-after-carousel">
+                    
                 </div>
             </div>
             <div class="text-center ">
